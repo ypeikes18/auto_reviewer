@@ -3,7 +3,7 @@
 ## Setup
 - If you don't already have one, obtain an Open AI API key
 
-- Add ``OPEN_AI_API_KEY`` to your environment
+- Add ``OPEN_AI_API_KEY`` to your environment \n
 - ``echo 'export OPEN_AI_API_KEY="your_api_key_here"' >> ~/.bash_profile``
 - If you are using a shell other than bash, such as zsh (common in newer macOS versions), 
 replace .bash_profile with .zshrc or the appropriate configuration file for your shell.
