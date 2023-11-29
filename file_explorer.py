@@ -1,5 +1,4 @@
 import os
-from typing import List
 import functools
 
 
@@ -31,7 +30,7 @@ def map_path_to_file_contents(path: str):
     return {}
 
 
-def should_ignore(path, item):
+def should_ignore(path: str, item: str) -> bool:
     if is_blacklisted(item):
         return True
     full_item_path = os.path.join(path, item)
@@ -41,7 +40,7 @@ def should_ignore(path, item):
     
 
 
-def read_file_contents(file_path):
+def read_file_contents(file_path: str) -> str:
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             return file.read()
@@ -63,14 +62,14 @@ def is_blacklisted(name: str) -> bool:
     return name in get_blacklisted()
 
 
-def is_whitelisted(name: str):
+def is_whitelisted(name: str) -> bool:
     split = name.split(".")
     if len(split) > 0:
         return split[-1] in get_whitelisted()
 
 
 @functools.lru_cache(maxsize=None)
-def file_to_set(file_path):
+def file_to_set(file_path: str) -> set:
     """
     Reads a file and converts each line into an element of a set.
 

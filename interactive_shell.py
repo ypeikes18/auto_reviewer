@@ -22,7 +22,7 @@ def shell_prompt_loop_step(global_vars):
     if user_input in EXIT_COMMANDS:
         close_shell()
     try:
-        exec(user_input, global_vars)
+        print(exec(user_input, global_vars))
     except Exception as e:
         print("Error:", e)
     return True
@@ -37,8 +37,7 @@ command_to_normalized_command = {
 
 commands_to_functions = {
     "review": get_response_to_prompt,
-    "exit": close_shell,
-    "e": close_shell
+    "get_file_tree": map_path_to_file_contents,
 }
 
 def create_variables_from_dict(var_dict):

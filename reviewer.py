@@ -3,6 +3,7 @@ import argparse
 from interactive_shell import start_interactive_shell
 from file_explorer import map_path_to_file_contents
 from ai_api import get_response_to_prompt
+from config.config import 
 
 
 
@@ -20,7 +21,6 @@ if __name__ == "__main__":
         base_prompt_arg = args.base_prompt
 
         file_tree = map_path_to_file_contents(path)
-        print(file_tree)
         base_prompt = f"Please review the following code in the file tree represented in the dictionary:\n\n" or base_prompt_arg
         prompt = f"Please review the following code in the file tree represented in the dictionary:\n\n{file_tree}"
         response = get_response_to_prompt(prompt)
