@@ -19,8 +19,8 @@ if __name__ == "__main__":
         base_prompt_arg = args.base_prompt
 
         file_tree = map_path_to_file_contents(path) if args.path else ""
-        base_prompt = base_prompt_arg + "\n\n" or f"Please review the following code in the file tree represented in the dictionary:"
-        prompt = f"Please review the following code in the file tree represented in the dictionary:\n\n{file_tree}"
+        base_prompt = base_prompt_arg or f"Please review the following code in the file tree represented in the dictionary:"
+        prompt = f"{base_prompt}\n\n{file_tree}"
         response = get_response_to_prompt(prompt)
         print(response)
         sys.exit(1)
