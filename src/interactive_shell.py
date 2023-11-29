@@ -1,6 +1,5 @@
-from file_explorer import map_path_to_file_contents
-from ai_api import get_response_to_prompt
-import argparse
+from src.file_explorer import map_path_to_file_contents
+from src.ai_api import get_response_to_prompt
 import sys
 
 EXIT_COMMANDS = {"e", "exit"}
